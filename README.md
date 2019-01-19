@@ -7,7 +7,11 @@ https://downloads.pwnedpasswords.com/passwords/pwned-passwords-sha1-ordered-by-h
 Download size is ~10G, size after extraction is ~23G.  
 
 Now have a look at the code of check-hibp.py.  
-Don't feed any random tool your passwords. Check that it's safe.
+Don't worry, it's a lot shorter than this README ;)  
+
+Really, don't feed any random tool your passwords.
+Check that it's safe.  
+Or trust it. But then again, don't trust random people on github.
 
 ## Usage
 ```
@@ -73,4 +77,8 @@ After a restart of chrome, open 'Managed passwords' in settings and you will fin
 Finally, use something like `cut -d, -f4` to select the correct column.
 
 ### Firefox
-TODO
+Surprisingly, firefox of all tools makes it rather a pain in the ass to extract saved credentials.  
+Running an external tool or extension is out of the question for me (even if open source, because then I would have to audit it first),
+so I found [this solution](https://support.mozilla.org/en-US/questions/1077630#answer-834769) using the browser console of firefox and a chunk of javascript.  
+Its not exactly pretty, but it gets us some json with the desired data.  
+All that's left is extracting the respective password fields.
