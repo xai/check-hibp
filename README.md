@@ -81,4 +81,6 @@ Surprisingly, firefox of all tools makes it rather a pain in the ass to extract 
 Running an external tool or extension is out of the question for me (even if open source, because then I would have to audit it first),
 so I found [this solution](https://support.mozilla.org/en-US/questions/1077630#answer-834769) using the browser console of firefox and a chunk of javascript.  
 Its not exactly pretty, but it gets us some json with the desired data.  
-All that's left is extracting the respective password fields.
+Remember to encrypt the json file with gpg.  
+All that's left is extracting the respective password fields, which you can accomplish with, e.g., [jq](https://stedolan.github.io/jq/) (also in many distro repositories) like this:  
+`gpg -qd firefox.json.gpg | jq '.[] | .password'`
